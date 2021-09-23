@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:viewmodels="clr-namespace:crudrealdb.ViewModels" 
+    x:Class="crudrealdb.Views.InsertarPersonaje">
+
+    <ContentPage.BindingContext> 
+        <viewmodels:PersonajeModel/> 
+    </ContentPage.BindingContext> 
+    <ContentPage.Content> 
+        <StackLayout Orientation="Vertical"> 
+            <Label FontSize="40" TextColor="Fuchsia" Text="Nuevo Personaje" 
+                   HorizontalOptions="Center"/> 
+            <Label Text="Id Personaje" VerticalOptions="Center"/> 
+            <Entry HorizontalOptions="FillAndExpand" 
+                           Text="{Binding Personaje.idPersonaje}"/> 
+            <Label Text="Nombre" VerticalOptions="Center"/> 
+            <Entry HorizontalOptions="FillAndExpand" 
+                           Text="{Binding Personaje.Nombre}"/> 
+            <Label Text="Serie" VerticalOptions="Center"/> 
+            <Entry HorizontalOptions="FillAndExpand" 
+                           Text="{Binding Personaje.Serie}"/> 
+            <Button Text="Insertar Personaje" HorizontalOptions="FillAndExpand" 
+                    Command="{Binding InsertarDato}"/> 
+            <Label FontSize="25" TextColor="Blue" 
+                   Text="{Binding Mensaje}"/> 
+        </StackLayout> 
+    </ContentPage.Content> 
+</ContentPage>
